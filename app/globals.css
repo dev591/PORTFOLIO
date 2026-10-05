@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f6f4ee;
+  --grid: rgba(20, 20, 20, 0.06);
+  --surface: #ffffff;
+  --ink: #141414;
+  --muted: #55524a;
+  --line: #141414;
+  --shadow: #141414;
+  --yellow: #ffc727;
+  --red: #dc2626;
+  --on-red: #ffffff;
+  --blue: #2563eb;
+  --green: #22c55e;
+  --purple: #7c3aed;
+  --on-accent: #141414;
+}
+
+.dark {
+  --bg: #121212;
+  --grid: rgba(255, 255, 255, 0.05);
+  --surface: #1c1c1e;
+  --ink: #f4f1e8;
+  --muted: #b3ada0;
+  --line: #f4f1e8;
+  --shadow: #000000;
+  --yellow: #ffcf3f;
+  --red: #f05252;
+  --on-red: #141414;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-yellow: var(--yellow);
+  --color-red: var(--red);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+  --color-purple: var(--purple);
+  --color-on-accent: var(--on-accent);
+  --color-on-red: var(--on-red);
+  --font-pixel: var(--font-silkscreen);
+  --font-display: var(--font-press-start);
+  --font-mono: var(--font-jetbrains);
+  --font-sans: var(--font-jetbrains);
+}
+
+/* Smooth scrolling is handled by Lenis (components/SmoothScroll.tsx). */
+html {
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 16px 16px;
+  color: var(--ink);
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+::selection {
+  background: var(--yellow);
+  color: #141414;
+}
+
+@layer utilities {
+  .pixel-border {
+    border: 3px solid var(--line);
+  }
+  .pixel-shadow {
+    box-shadow: 6px 6px 0 0 var(--shadow);
+  }
+  .pixel-shadow-sm {
+    box-shadow: 4px 4px 0 0 var(--shadow);
+  }
+  .dark .pixel-shadow {
+    box-shadow: 6px 6px 0 0 var(--yellow);
+  }
+  .dark .pixel-shadow-sm {
+    box-shadow: 4px 4px 0 0 var(--yellow);
+  }
+  .pixelated {
+    image-rendering: pixelated;
+  }
+  /* Button press: slide into its own shadow */
+  .pixel-press {
+    transition: transform 80ms steps(2), box-shadow 80ms steps(2);
+  }
+  .pixel-press:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 var(--shadow);
+  }
+  .dark .pixel-press:hover {
+    box-shadow: 6px 6px 0 0 var(--yellow);
+  }
+  .pixel-press:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 var(--shadow);
+  }
+}
+
+:focus-visible {
+  outline: 3px dashed var(--yellow);
+  outline-offset: 3px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.cursor-blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.bob {
+  animation: bob 2.4s steps(4) infinite;
+}
+
+@keyframes enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+}
+@keyframes enter-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+.enter-left {
+  animation: enter-left 0.5s steps(6) both;
+}
+.enter-pop {
+  animation: enter-pop 0.5s steps(6) 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
