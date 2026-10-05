@@ -158,3 +158,19 @@ body {
     transition: none !important;
   }
 }
+
+/* Click burst particles (components/ClickBurst.tsx) */
+.pixel-burst {
+  position: fixed;
+  z-index: 100;
+  width: 6px;
+  height: 6px;
+  pointer-events: none;
+  animation: pixel-burst 0.42s steps(5) forwards;
+}
+@keyframes pixel-burst {
+  to {
+    transform: translate(var(--dx), var(--dy));
+    opacity: 0;
+  }
+}

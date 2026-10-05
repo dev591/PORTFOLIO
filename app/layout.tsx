@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Press_Start_2P, Silkscreen } from "next/font/google";
+import { PixelCursor } from "@/components/PixelCursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { profile } from "@/data/portfolio";
 import "lenis/dist/lenis.css";
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${silkscreen.variable} ${pressStart.variable} ${jetbrains.variable} antialiased`}
     >
       <body className="min-h-screen">
+        <PixelCursor />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
