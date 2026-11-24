@@ -153,6 +153,8 @@ export const skills = [
   },
   { group: "Frameworks", items: ["LangChain", "LangGraph", "Google ADK", "FastAPI", "Next.js"] },
   { group: "Web3 / Blockchain", items: ["Algorand SDK", "PyTeal / TEAL", "Solidity", "Ethers.js", "Smart Contracts"] },
+  { group: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Three.js", "GSAP", "TypeScript"] },
+  { group: "Backend", items: ["FastAPI", "REST APIs", "WebSockets", "Node.js", "Docker"] },
   { group: "Languages", items: ["Python", "C++", "C", "TypeScript", "JavaScript", "Java", "Node.js", "HTML/CSS"] },
   { group: "Data", items: ["Pandas", "NumPy", "SQL", "DBMS", "EDA", "Power BI (DAX)", "Excel"] },
   { group: "Cloud & Practices", items: ["AWS", "Git & GitHub", "DSA", "System Design Basics", "Manual Testing"] },
