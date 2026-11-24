@@ -38,7 +38,7 @@ export const profile = {
     "Generative AI engineer and B.Tech CSE (Data Science & AI) undergrad at NMIMS Hyderabad, certified in agentic AI engineering by IIT Mandi. I build and ship RAG and multi-agent systems end to end, from hackathon prototype to something that holds up under judging.",
   stats: [
     { value: "4", label: "AI Projects" },
-    { value: "2", label: "Hackathons" },
+    { value: "3", label: "Hackathons" },
     { value: "4", label: "Certifications" },
   ],
 };
@@ -126,7 +126,7 @@ export const projects: Project[] = [
 
 export const experience = [
   {
-    role: "AI Engineering Trainee — Agentic AI Program",
+    role: "AI Engineering Intern — Agentic AI Program",
     org: "Indian Institute of Technology (IIT) Mandi",
     period: "2 months",
     points: [
@@ -152,12 +152,14 @@ export const skills = [
     items: ["RAG", "Vectorless RAG", "Agentic Workflows", "Multi-Agent Systems", "Deep Agents", "Prompt Engineering", "Guardrails", "LLM Evals", "LLM Gateways", "Vector DBs & Embeddings"],
   },
   { group: "Frameworks", items: ["LangChain", "LangGraph", "Google ADK", "FastAPI", "Next.js"] },
+  { group: "Web3 / Blockchain", items: ["Algorand SDK", "PyTeal / TEAL", "Solidity", "Ethers.js", "Smart Contracts"] },
   { group: "Languages", items: ["Python", "C++", "C", "TypeScript", "JavaScript", "Java", "Node.js", "HTML/CSS"] },
   { group: "Data", items: ["Pandas", "NumPy", "SQL", "DBMS", "EDA", "Power BI (DAX)", "Excel"] },
   { group: "Cloud & Practices", items: ["AWS", "Git & GitHub", "DSA", "System Design Basics", "Manual Testing"] },
 ];
 
 export const achievements = [
+  { title: "Fynd Hackathon", detail: "1st Place — mentored/judged by an Algorand company SPOC", kind: "trophy" as const },
   { title: "Smart India Hackathon 2026", detail: "Internal selection winner — representing NMIMS Hyderabad", kind: "trophy" as const },
   { title: "Razorpay Hackathon", detail: "Track 1 · Agentic Commerce — built Mandate solo", kind: "trophy" as const },
   { title: "Certified AI / Agentic AI Engineer", detail: "IIT Mandi", kind: "cert" as const },
